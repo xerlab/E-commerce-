@@ -1,0 +1,1 @@
+[-] Component : AvailableColors need to be responsive -> needed in ListingPage  
