@@ -6,15 +6,15 @@
 
 @layer base {
   .container {
-    @apply m-auto;
+    @apply m-auto px-8;
   }
 
   button {
-    @apply rounded-step1 font-medium py-3 px-4 bg-neutral-B900 text-neutral-W900 text-sm hover:bg-neutral-B800;
+    @apply rounded-md font-medium py-3 px-4 bg-neutral-B900 text-neutral-W900 text-sm hover:bg-neutral-B800 flex items-center justify-center;
   }
 
   .btn-outline {
-    @apply bg-neutral-W900 text-neutral-B500 border border-neutral-W200 hover:bg-neutral-W100 hover:cursor-pointer;
+    @apply hover:cursor-pointer w-full flex items-center justify-center rounded p-4 bg-neutral-W900 hover:bg-neutral-W100 text-neutral-B500 border border-neutral-W200 hover:border-neutral-B200 gap-3 transition;
   }
 
   .error {
@@ -29,8 +29,16 @@
     @apply bg-neutral-B900 text-neutral-W900;
   }
 
-  .Searchbox {
-    @apply border border-neutral-B200 rounded-step1 p-2 focus:outline-none focus:border-neutral-B300;
+  .InputBox {
+    @apply border border-neutral-B200  focus:outline-none focus-within:border-neutral-B300 group-focus-within:border-neutral-B500 relative p-3.5 rounded-md font-light;
+  }
+
+  .InputBox-Label {
+    @apply absolute text-neutral-B500 font-medium group-focus-within:text-neutral-B200 top-1.5 text-xs transition duration-300 ease-in-out;
+  }
+
+  .InputBox-Input {
+    @apply mt-2.5 text-neutral-B900 font-medium placeholder:font-light placeholder:text-sm;
   }
 
   input {
@@ -38,10 +46,14 @@
   }
 
   .icon {
-    @apply hover:opacity-70 hover:cursor-pointer;
+    @apply hover:opacity-70 hover:cursor-pointer transition;
   }
 
-  .menu {
-    @apply hover:opacity-70 hover:cursor-pointer;
+  .Title {
+    @apply uppercase text-sm font-medium text-neutral-B300;
+  }
+
+  .Remove {
+    @apply text-xs btn-outline p-0.5 hover:bg-semantic-R100 hover:text-semantic-R800 hover:border-semantic-R300;
   }
 }

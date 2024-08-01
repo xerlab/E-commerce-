@@ -1,18 +1,10 @@
-<script setup>
-import Header from "../../components/Header.vue";
-import Footer from "../../components/Footer.vue";
-import CurrentDir from "../../components/CurrentDir.vue";
-</script>
+<script setup></script>
 
 <template>
-  <Header />
-  <CurrentDir />
-  <div class="Login-Form container w-96">
-    <div class="Email-Password flex flex-col gap-8 my-20 m-4">
-      <div
-        class="btn-outline w-full flex items-center justify-center rounded p-4 hover:border-neutral-B300 gap-4"
-      >
-        <img src="../../assets/Logo/Google.svg" alt="" width="28" />
+  <div class="Login-Form container">
+    <div class="Email-Password flex flex-col gap-3 md:w-fit">
+      <div class="btn-outline">
+        <img src="@logo/Google.svg" alt="" width="28" />
         <p class="font-medium text-neutral-B500">Continue with Google</p>
       </div>
       <div class="OR flex items-center justify-center">
@@ -20,40 +12,26 @@ import CurrentDir from "../../components/CurrentDir.vue";
         <p class="text-neutral-B800 font-medium text-sm mx-4">OR</p>
         <hr class="text-neutral-B100 w-full" />
       </div>
-      <div class="Email group">
-        <div
-          class="Searchbox group-focus-within:border-neutral-B500 relative p-4 rounded-md font-light"
-        >
-          <label
-            class="absolute text-neutral-B500 font-medium group-focus-within:text-neutral-B200 top-1.5 text-xs transition duration-300 ease-in-out"
-            for=""
-            >Email</label
-          >
-          <input
-            class="mt-2 text-neutral-B900 font-medium placeholder:font-light placeholder:text-sm"
-            type="email"
-            placeholder="Enter your email address"
-          />
-        </div>
+      <div class="Email InputBox group">
+        <label class="InputBox-Label" for="">Email</label>
+        <input
+          class="InputBox-Input"
+          type="email"
+          placeholder="Enter your Email address"
+        />
       </div>
-      <div class="Password group">
-        <div
-          class="Searchbox group-focus-within:border-neutral-B500 relative p-4 rounded-md font-light"
-        >
-          <label
-            class="absolute text-neutral-B700 font-medium group-focus-within:text-neutral-B200 top-1.5 text-xs transition duration-300 ease-in-out"
-            for=""
-            >Password</label
-          >
-          <input
-            class="mt-2 text-neutral-B900 font-medium placeholder:font-light placeholder:text-sm"
-            type="password"
-            placeholder="Enter your password"
-          />
-        </div>
+      <div class="Password InputBox group">
+        <label class="InputBox-Label" for="">Confirm Password</label>
+        <input
+          class="InputBox-Input"
+          type="password"
+          placeholder="Enter your Password again"
+        />
       </div>
-      <p class="text-sm text-neutral-B600 icon">Forgot your password ?</p>
-      <button class="flex gap-4 p-4 justify-center">
+      <p class="text-xs text-neutral-B800 icon text-right pb-4">
+        Forgot your password ?
+      </p>
+      <button class="gap-4 p-4">
         <p>Login</p>
       </button>
       <p class="text-sm text-neutral-B600 text-center">
@@ -62,5 +40,4 @@ import CurrentDir from "../../components/CurrentDir.vue";
       </p>
     </div>
   </div>
-  <Footer />
 </template>

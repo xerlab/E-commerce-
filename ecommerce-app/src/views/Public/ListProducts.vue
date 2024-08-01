@@ -1,64 +1,71 @@
 <script setup>
-import Header from "../components/Header.vue";
-import Footer from "../components/Footer.vue";
-
-import CurrentDir from "../components/CurrentDir.vue";
-import AvailableColors from "../components/AvailableColors.vue";
-import AvailableSizes from "../components/AvailableSizes.vue";
-import PriceRange from "../components/PriceRange.vue";
-import CategoriesFilter from "../components/CategoriesFilter.vue";
-import ProductCard from "../components/ProductCard.vue";
+import Category from "@components/Filters/Category.vue";
+import Color from "@components/Filters/Color.vue";
+import Price from "@components/Filters/Price.vue";
+import Size from "@components/Filters/Size.vue";
+import ProductCard from "@components/Product/ProductCard.vue";
 </script>
 
 <template>
-  <Header />
-  <CurrentDir />
   <!-- Middle area -->
   <div class="Listing container flex">
     <div
-      class="Filter hidden lg:block border border-neutral-B100 rounded-xl p-5 h-fit"
+      class="Filters-SideBar hidden lg:block border border-neutral-B100 rounded-xl p-6 h-fit"
     >
-      <div class="Categories-Filter"><CategoriesFilter /></div>
-      <div class="Colors-Filter"><AvailableColors /></div>
-      <div class="Size-Filter"><AvailableSizes /></div>
-      <div class="Price-Filter"><PriceRange /></div>
+      <div class="Categories-Filter mb-10"><Category /></div>
+      <p class="Title py-3">Color, Size & Price Filters</p>
+      <div class="Colors-Filter"><Color /></div>
+      <div class="Size-Filter"><Size /></div>
+      <div class="Price-Filter"><Price /></div>
     </div>
-    <div class="Listing px-10 w-full">
-      <div class="Applied-Filters mb-6">
-        <h2 class="Applied-Filters-Title text-neutral-B800 font-medium px-8">
+    <div class="Listing w-full lg:px-10">
+      <div class="Filters_smenu lg:hidden mb-10">
+        <div class="Menu icon btn-outline w-fit py-1">
+          <img src="@icons/Menu.svg" alt="" />
+          <p class="Title py-2">Filters Menu</p>
+        </div>
+      </div>
+      <div class="Applied-Filters">
+        <h2 class="AppliedFilters-Title text-neutral-B800 font-medium">
           Applied Filters:
         </h2>
-        <div class="Applied-Filters-List px-7 py-5 flex flex-wrap gap-3">
-          <div
-            v-for="x in 3"
-            class="Filter-X border border-neutral-B100 rounded-full px-2 py-1 lg:px-5 lg:py-2 w-fit flex items-center gap-2"
-          >
-            <P class="font-medium text-xs lg:text-sm pl-1">Perfume</P>
-            <img src="./assets/icons/X.svg" alt="" class="icon" />
+        <div class="Applied-Filters-List py-2 flex flex-col gap-3 my-2">
+          <div class="Filters-Applied flex flex-wrap gap-3">
+            <div
+              v-for="x in 3"
+              class="Remove w-fit group rounded-full py-1.5 px-4"
+            >
+              <P class="font-medium text-xs lg:text-sm pl-1">Perfume</P>
+              <img
+                src="@icons/X.svg"
+                alt=""
+                width="20"
+                class="hidden group-hover:block"
+              />
+            </div>
           </div>
         </div>
         <div
-          class="Results-Title flex items-center justify-between text-xs gap-3 text-neutral-B400 mb-2 px-8 mt-2"
+          class="Results-Title flex items-center justify-between text-xs gap-3 text-neutral-B400 mb-2 mt-2"
         >
           <div class="Results-Count">Showing 1-9 of 36 results.</div>
           <div class="SortBy flex items-center icon">
             SORT BY
-            <img src="./assets/icons/Chevron Down.svg" alt="" />
+            <img src="@icons/Chevron Down.svg" alt="" />
           </div>
         </div>
       </div>
-      <div class="Products-Listing flex flex-wrap justify-center gap-6 mb-20">
-        <div v-for="x in 20" class="Best-selling-item p-1">
-          <!-- The item card  -->
-          <ProductCard />
-        </div>
+      <div class="Products-Listing flex flex-col items-center gap-8 mb-20">
         <div
-          class="btn-outline p-4 rounded-md hover:border-neutral-B800 hover:text-neutral-B800"
+          class="ProductsList flex flex-wrap gap-6 md:justify-start justify-center"
         >
-          Show more results
+          <div v-for="x in 20" class="Best-selling-item p-1">
+            <!-- The item card  -->
+            <ProductCard />
+          </div>
         </div>
+        <div class="btn-outline w-fit">Show more results</div>
       </div>
     </div>
   </div>
-  <Footer />
 </template>

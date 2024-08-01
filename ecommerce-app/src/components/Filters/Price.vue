@@ -1,10 +1,6 @@
 <template>
   <div class="Price-Range">
-    <p
-      class="Available-Colors-Title uppercase text-sm font-semibold text-neutral-B200 pb-2"
-    >
-      Price Range
-    </p>
+    <p class="Price Title text-xs">Price Range</p>
     <div class="Price-Range flex justify-between">
       <div class="From">
         <label class="text-xs text-neutral-B200 p-2">From</label>

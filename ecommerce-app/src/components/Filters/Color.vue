@@ -1,17 +1,9 @@
 <template>
-  <div class="Available-Colors">
-    <p
-      class="Available-Colors-Title uppercase text-sm font-semibold text-neutral-B200"
+  <div class="Color-Filter">
+    <div
+      class="Colors flex gap-3 p-1.5 px-2.5 border border-neutral-B100 rounded-lg"
     >
-      Available Colors
-    </p>
-    <div class="Available-Colors-Pallete flex gap-3 py-4">
-      <div
-        v-for="x in 3"
-        class="Selected-Color border border-neutral-B300 rounded-full flex p-1"
-      >
-        <div class="Color w-7 h-7 rounded-full bg-primary-B800"></div>
-      </div>
+      <div v-for="x in 3" class="Color p-4 rounded-full bg-primary-B800"></div>
     </div>
   </div>
 </template>

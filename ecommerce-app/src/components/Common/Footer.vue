@@ -2,75 +2,101 @@
   <!-- Footer -->
   <!-- -----Newsletter -->
 
-  <div class="Hero bg-neutral-W100">
-    <div class="container flex flex-wrap justify-between px-10">
-      <div class="Left md:py-20 pt-10">
-        <div class="Title flex flex-col gap-3">
-          <h2 class="font-bold text-xl">Join Our Newsletter</h2>
-          <p class="text-xs font-light">
-            We love to surprise our subscribers with occasional gifts.
-          </p>
-        </div>
-      </div>
+  <footer>
+    <div class="Hero bg-neutral-W100">
       <div
-        class="Right overflow-hidden flex items-center justify-end sm:w-1/2 py-10"
+        class="Footer-News container flex flex-wrap md:justify-between justify-center"
       >
-        <div class="flex items-center">
-          <div class="Searchbox flex items-center w-fit gap-3 mr-4">
-            <input
-              type="text"
-              class="bg-neutral-W100 p-1 text-sm"
-              placeholder="Enter your email"
-            />
+        <div class="Left md:py-20 pt-10 text-center md:text-start">
+          <div class="NewsTitle flex flex-col gap-3">
+            <h2 class="font-bold text-xl">Join Our Newsletter</h2>
+            <p class="text-xs font-light md:w-4/5">
+              We love to surprise our subscribers with occasional gifts.
+            </p>
           </div>
-          <button class="flex items-center gap-2">
-            <p>Subscribe</p>
-          </button>
+        </div>
+        <div class="Right flex items-center justify-end py-10">
+          <div class="Subscribe-Form flex items-center gap-2 flex-col">
+            <div class="Email group">
+              <div
+                class="InputBox group-focus-within:border-neutral-B500 relative p-4 rounded-md font-light"
+              >
+                <label
+                  class="absolute text-neutral-B500 font-medium group-focus-within:text-neutral-B200 top-1.5 text-xs transition duration-300 ease-in-out"
+                  for=""
+                  >Email</label
+                >
+                <input
+                  class="mt-2 bg-neutral-W100 text-neutral-B900 font-medium placeholder:font-light placeholder:text-sm"
+                  type="email"
+                  placeholder="Enter your email address"
+                />
+              </div>
+            </div>
+            <button class="Subscribe-Btn gap-2 w-full">
+              <p>Subscribe</p>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Footer links -->
-  <div
-    class="Footer-links container flex flex-wrap i justify-center lg:justify-between items-start my-32 px-10 gap-20"
-  >
-    <div class="Left flex flex-col gap-5 justify-center lg:justify-between">
-      <img src="../assets/Logo/Footer.svg" alt="" width="200px" />
-      <p class="text-sm text-neutral-B300 w-3/5">
-        DevCut is a YouTube channel for practical project-based learning.
-      </p>
-      <div class="flex gap-3">
-        <img src="../assets/icons/Social Icons/Github.svg" alt="" />
-        <img src="../assets/icons/Social Icons/Telegram.svg" alt="" />
-        <img src="../assets/icons/Social Icons/Youtube.svg" alt="" />
-        <img src="../assets/icons/Social Icons/Whatsapp.svg" alt="" />
+    <!-- Footer links -->
+    <div
+      class="Footer-links container flex flex-wrap justify-center gap-10 md:justify-between my-20"
+    >
+      <div class="SocialLinks flex flex-col gap-2 w-72">
+        <img src="@logo/Footer.svg" alt="" width="200px" />
+        <p class="text-sm text-neutral-B300">
+          DevCut is a YouTube channel for practical project-based learning.
+        </p>
+        <div class="flex gap-3">
+          <img src="@icons/Social Icons/Github.svg" alt="" />
+          <img src="@icons/Social Icons/Telegram.svg" alt="" />
+          <img src="@icons/Social Icons/Youtube.svg" alt="" />
+          <img src="@icons/Social Icons/Whatsapp.svg" alt="" />
+        </div>
       </div>
-    </div>
-    <div class="Middle flex flex-wrap gap-20">
       <div
-        v-for="x in 3"
-        class="Support text-neutral-B500 leading-9 font-medium"
+        class="PublicLinks flex gap-16 text-sm font-semibold text-neutral-B700"
       >
-        <p class="mb-6">SUPPORT</p>
-        <ul class="text-sm font-light text-neutral-B300 leading-7">
-          <li>FAQ</li>
-          <li>Terms of use</li>
-          <li>Privacy policy</li>
-        </ul>
+        <div class="Support leading-9 font-medium">
+          <p class="mb-6 text-neutral-B300">SUPPORT</p>
+          <ul class="leading-7">
+            <li>FAQ</li>
+            <li>Terms of use</li>
+            <li>Privacy policy</li>
+          </ul>
+        </div>
+        <div class="Company leading-9 font-medium">
+          <p class="mb-6 text-neutral-B300">COMPANY</p>
+          <ul class="leading-7">
+            <li>About us</li>
+            <li>Contact</li>
+            <li>Careers</li>
+          </ul>
+        </div>
+        <div class="Shop leading-9 font-medium">
+          <p class="mb-6 text-neutral-B300">SHOP</p>
+          <ul class="leading-7">
+            <li>My Account</li>
+            <li>Checkout</li>
+            <li>Cart</li>
+          </ul>
+        </div>
+      </div>
+      <div class="Right text-neutral-B500 leading-9 font-medium">
+        <h2 class="mb-6">ACCEPTED PAYMENTS</h2>
+        <div class="Payments flex gap-4 filter grayscale opacity-70">
+          <img src="@images/Payments/Mastercard.png" alt="" />
+          <img src="@images/Payments/Amex.png" alt="" />
+          <img src="@images/Payments/Visa.png" alt="" />
+        </div>
       </div>
     </div>
-    <div class="Right text-neutral-B500 leading-9 font-medium">
-      <h2 class="mb-6">ACCEPTED PAYMENTS</h2>
-      <div class="Payments flex gap-4 filter grayscale opacity-70">
-        <img src="../assets/Images/Payments/Mastercard.png" alt="" />
-        <img src="../assets/Images/Payments/Amex.png" alt="" />
-        <img src="../assets/Images/Payments/Visa.png" alt="" />
-      </div>
+    <hr class="text-neutral-B100 container" />
+    <div class="font-normal text-sm text-neutral-B300 flex justify-center p-6">
+      © 2023 DevCut. All rights reserved.
     </div>
-  </div>
-  <hr class="text-neutral-B100 container" />
-  <div class="font-normal text-sm text-neutral-B300 flex justify-center p-6">
-    © 2023 DevCut. All rights reserved.
-  </div>
+  </footer>
 </template>

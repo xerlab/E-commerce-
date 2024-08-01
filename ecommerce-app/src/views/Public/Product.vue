@@ -1,91 +1,85 @@
 <script setup>
-import Header from "../components/Header.vue";
-import Footer from "../components/Footer.vue";
-import AvailableColors from "../components/AvailableColors.vue";
-import AvailableSizes from "../components/AvailableSizes.vue";
-import AvailableQuantity from "../components/AvailableQuantity.vue";
-import ProductsList from "../components/ProductsList.vue";
-import CurrentDir from "../components/CurrentDir.vue";
+import Color from "@components/Filters/Color.vue";
+import Size from "@components/Filters/Size.vue";
+import Quantity from "@components/Filters/Quantity.vue";
 </script>
 
 <template>
-  <Header />
-  <hr class="text-neutral-B100 container" />
-  <CurrentDir />
   <div
     class="Product container grid lg:grid-cols-2 grid-flow-dense grid-cols-1"
   >
+    <!-- Product Image -->
     <div
       class="Product-Image bg-neutral-W100 w-full flex items-center justify-center rounded-xl"
     >
-      <img
-        src="../assets/Images/Products/Product image.png"
-        alt=""
-        class="p-10"
-      />
+      <img src="@images/Products/Product image.png" alt="" class="p-10" />
     </div>
-    <div class="Product-Details flex flex-col gap-5 px-20 py-8">
-      <div class="Product-Title flex justify-between">
-        <p class="text-2xl font-semibold">Raw Black T-Shirt Lineup</p>
-        <div class="Product-Share icon">
-          <img src="../assets/icons/Share.svg" alt="" width="28" />
+    <!-- Product Details -->
+    <div class="Product flex flex-col lg:flex-row">
+      <div class="Product-Details p-6 flex flex-col gap-3 justify-between">
+        <div class="Product-Title flex justify-between">
+          <p class="text-2xl font-semibold">Raw Black T-Shirt Lineup</p>
+          <div class="Product-Share icon">
+            <img src="@icons/Share.svg" alt="" width="28" />
+          </div>
         </div>
-      </div>
-      <div class="Product-Review flex gap-4">
-        <span
-          class="bg-neutral-W200 font-light text-xs rounded-full px-3 py-1 hover:cursor-pointer flex items-center"
-        >
-          <img src="./assets/icons/Star.svg" alt="" class="" />
-          <p class="text-neutral-B600 h-full flex items-center px-2">
-            4.2 — 54 Reviews
-          </p>
-        </span>
-        <span
-          class="border border-neutral-B100 font-light text-xs rounded-full px-3 py-1 hover:cursor-pointer flex items-center"
-          >Featured</span
-        >
-      </div>
-      <div class="Product-Price text-4xl font-bold text-neutral-B500 my-10">
-        $75.00
-      </div>
-      <div class="flex flex-wrap gap-8 w-2/3">
-        <AvailableSizes />
-        <AvailableColors />
-        <AvailableQuantity />
-      </div>
-      <div class="Add-to-Cart flex gap-3 mt-16">
-        <button class="w-80"><p class="p-1">Add to cart</p></button>
+        <div class="Padges gap-3 flex">
+          <span
+            class="bg-neutral-W200 font-light text-xs rounded-full px-3 py-1 icon flex items-center"
+          >
+            <img src="@icons/Star.svg" alt="" class="" />
+            <p class="text-neutral-B600 h-full flex items-center px-2">
+              4.2 — 54 Reviews
+            </p>
+          </span>
+          <span
+            class="border border-neutral-B100 font-light text-xs rounded-full px-3 py-1 flex items-center"
+            >Featured</span
+          >
+        </div>
+        <div class="Product-Price text-2xl font-medium text-neutral-B900 py-3">
+          $75.00
+        </div>
         <div
-          class="btn-outline flex items-center justify-center w-12 rounded-lg"
+          class="Filters flex flex-col gap-3 border border-neutral-B100 rounded-md p-4"
         >
-          <img src="./assets/icons/Heart.svg" alt="" />
+          <p class="Title">Filters for Color Size & Quantity</p>
+          <div class="flex flex-col items-start">
+            <Color />
+            <Size />
+            <Quantity />
+          </div>
         </div>
+        <div class="AddToCard flex gap-3">
+          <button class="w-80">Add to cart</button>
+          <button class="btn-outline">
+            <img src="@icons/Heart.svg" alt="" />
+          </button>
+        </div>
+        <p class="Title">— Free shipping on orders $100+</p>
       </div>
-      <p class="text-sm font-medium uppercase text-neutral-B300">
-        — Free shipping on orders $100+
-      </p>
     </div>
   </div>
 
-  <div class="Review container flex flex-col xl:flex-row gap-32 my-28 p-20">
+  <div
+    class="Review container flex flex-col xl:flex-row gap-32 p-16 items-start"
+  >
     <!-- Navigation of the reviews/Details -->
-    <div class="Tabs flex flex-col items-center gap-4 justify-center w-64">
-      <div
-        class="Details flex items-center gap-3 px-6 py-2 w-full bg-neutral-W100 hover:cursor-pointer rounded-md"
-      >
-        <img src="./assets/icons/More.svg" alt="" />
-        <p class="">Details</p>
-      </div>
-      <div
-        class="Review flex items-center gap-3 px-6 py-2 w-full hover:cursor-pointer rounded-md"
-      >
-        <img src="./assets/icons/Empty Star.svg" alt="" />
-        <p>Review</p>
-      </div>
-    </div>
+    <div
+      class="Tabs flex lg:flex-col items-center gap-4 justify-center lg:w-64 w-full"
+    >
+      <button class="Details gap-2 lg:justify-start w-full">
+        <img src="@icons/More.svg" alt="" />
+        <p>Details</p>
+      </button>
 
+      <button class="Review btn-outline gap-2 lg:justify-start w-full">
+        <img src="@icons/Empty Star.svg" alt="" />
+        <p>Review</p>
+      </button>
+    </div>
     <!-- The RouterView of the reviews/Details -->
-    <div class="The-Routerview xl:w-5/6">
+    <div class="The-Routerview xl:w-5/6 mb-20">
       <div v-if="false" class="Tab-Nav-[Details]">
         <div class="Tab-Nav-Title-[Details] text-lg mb-4 font-semibold">
           Detail
@@ -114,7 +108,7 @@ import CurrentDir from "../components/CurrentDir.vue";
           <li>Tailored Fit</li>
         </ul>
       </div>
-      <div class="Tab-Nav-[Details]">
+      <div v-if="true" class="Tab-Nav-[Details]">
         <div class="Tab-Nav-Title-[Details] text-lg mb-4 font-semibold">
           Reviews
         </div>
@@ -131,12 +125,12 @@ import CurrentDir from "../components/CurrentDir.vue";
           class="SortBy flex items-center justify-end text-xs gap-3 text-neutral-B400 mb-2 icon"
         >
           SORT BY
-          <img src="./assets/icons/Chevron Down.svg" alt="" />
+          <img src="@icons/Chevron Down.svg" alt="" />
         </div>
         <hr class="text-neutral-B100" />
         <div
           v-for="x in 3"
-          class="ReviewsList flex flex-wrap-reverse gap-10 justify-between px-4 py-10 my-6"
+          class="ReviewsList flex flex-wrap-reverse gap-10 justify-between my-6"
         >
           <div class="User-Part flex lg:gap-8">
             <div
@@ -160,19 +154,15 @@ import CurrentDir from "../components/CurrentDir.vue";
             </div>
           </div>
           <div class="USER-Rate flex items-start w-40">
-            <img src="../assets/icons/Star.svg" alt="" width="32" />
-            <img src="../assets/icons/Star.svg" alt="" width="32" />
-            <img src="../assets/icons/Star.svg" alt="" width="32" />
-            <img src="../assets/icons/Star.svg" alt="" width="32" />
-            <img src="../assets/icons/Empty Star.svg" alt="" width="32" />
+            <img src="@icons/Star.svg" alt="" width="32" />
+            <img src="@icons/Star.svg" alt="" width="32" />
+            <img src="@icons/Star.svg" alt="" width="32" />
+            <img src="@icons/Star.svg" alt="" width="32" />
+            <img src="@icons/Empty Star.svg" alt="" width="32" />
           </div>
         </div>
         <div class="my-20 flex justify-center">
-          <div
-            class="btn-outline hover:border-neutral-B300 flex px-6 py-4 rounded-md justify-center w-fit transition"
-          >
-            Load more reviews
-          </div>
+          <div class="btn-outline">Load more reviews</div>
         </div>
       </div>
     </div>
