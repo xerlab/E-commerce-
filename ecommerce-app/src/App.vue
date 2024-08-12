@@ -1,3 +1,7 @@
-<script setup></script>
+<script setup>
+import AdminProfile from "./components/Admin/Profile.vue";
+</script>
 
-<template></template>
+<template>
+  <AdminProfile />
+</template>
